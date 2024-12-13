@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Banner from "../components/Banner"
 import AccommodationCard from '../components/AccommodationCard';
+import Spinner from '../components/Spinner';
 import bannerImage from "../assets/images/banner-trees.png"
 
-export default function Home() {
+const Home = () => {
 
     useEffect(() => {
         document.title = 'Kasa - Home Page';
@@ -15,19 +16,21 @@ export default function Home() {
         fetch("/api/accommodations")
             .then((response) => response.json())
             .then((data) => {
-                setCards(data.accommodations || []); // Ensure the correct property is accessed
+                setCards(data.accommodations || []); 
             })
-            .catch((error) => console.error("Error fetching data:", error)); // Log any errors
+            .catch((error) => console.error("Error fetching data:", error)); 
     }, []);
 
-    const cardComponents = cards.map((item) => (
+    const cardComponents = cards.map((card) => (
         <AccommodationCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            imageUrl={item.cover}
+            key={card.id}
+            id={card.id}
+            title={card.title}
+            imageUrl={card.cover}
         />
     ));
+
+    const loading = cards.length === 0;
 
     return (
         <>
@@ -36,8 +39,10 @@ export default function Home() {
                 title={"Home anywhere and everywhere"}
             />
             <div className="card-container">
-                {cardComponents}
+                { loading ? <Spinner /> : cardComponents }
             </div>
         </>
     );
 }
+
+export default Home;

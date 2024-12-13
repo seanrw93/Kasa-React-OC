@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function AccommodationDetails() {
+const AccommodationDetails = () => {
     const params = useParams();
 
     const [accomm, setAccomm] = useState(null);
@@ -25,3 +25,5 @@ export default function AccommodationDetails() {
         </>
     );
 }
+
+export default AccommodationDetails;

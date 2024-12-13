@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
 
-export default function Header() {
+const Header = () => {
     return (
         <header className="header">
             <div className="header__container">
@@ -17,3 +17,5 @@ export default function Header() {
         </header>
     );
 }
+
+export default Header;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as Logo } from '../assets/images/logo-white.svg';
 
-export default function Footer() {
+const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__container">
@@ -11,3 +11,5 @@ export default function Footer() {
         </footer>
     );
 }
+
+export default Footer;

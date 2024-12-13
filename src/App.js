@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import AccommodationDetails from './pages/AccommodationDetails';
 
-export default function App() {
+const App = () => {
   return (
     <BrowserRouter>
         <Routes>
@@ -21,3 +21,5 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+export default App;
