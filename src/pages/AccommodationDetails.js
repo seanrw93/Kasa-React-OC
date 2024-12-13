@@ -14,7 +14,14 @@ export default function AccommodationDetails() {
 
     return (
         <>
-            {accomm ? <h1>{accomm.title}</h1> : <p>Loading...</p>}
+            {accomm ? 
+                (
+                <div>
+                    <h1>{accomm.title}</h1>
+                    <img src={accomm.cover} alt={accomm.title} />
+                </div>
+                ) : <p>Loading...</p>
+            }
         </>
     );
 }

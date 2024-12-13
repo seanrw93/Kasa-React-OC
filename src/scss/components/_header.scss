@@ -1,0 +1,49 @@
+@import '../abstracts/colors';
+@import '../abstracts/mixins';
+
+.header {
+  width: 100%;
+  background-color: $background-color;
+  color: $primary-color;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    max-width: 8rem;
+    @include respond-to(medium) {
+      max-width: 10rem;
+    }
+  }
+
+  &__nav {
+    @include flex(row, space-between, center);
+    gap: 1rem;
+    width: 8em;
+
+    @include respond-to(medium) {
+      width: 10em;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $primary-color;
+      font-size: 1rem;
+      @include respond-to(medium) {
+        font-size: 1.2rem;
+      }
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

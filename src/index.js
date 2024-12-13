@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import './server/server'
-import './scss/App.scss';
+import './scss/main.scss';
 import App from './App';
 
 

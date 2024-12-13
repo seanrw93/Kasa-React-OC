@@ -1,0 +1,48 @@
+.card-container {
+    @include grid-layout(1, 2, 3);
+    width: 100%;
+    background-color: $secondary-color;
+    border-radius: 20px;
+    padding: 2rem;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.accommodation-card {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    width: 300px; 
+    height: 300px; 
+    flex: 1;
+    position: relative;
+    color: #fff;
+
+    &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Adjust the opacity as needed
+    border-radius: 10px; // Ensures the overlay follows the card's border radius
+    z-index: 1;
+    }
+
+    &__overlay {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    }
+
+    &__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    }
+}
+
+
+

@@ -1,11 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
 
 export default function Header() {
     return (
-        <header>
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+        <header className="header">
+            <div className="header__container">
+                <Link to="/" className="header__logo">
+                    <Logo />
+                </Link>
+                <nav className="header__nav">
+                    <Link to="/" className="header__nav-link">Home</Link>
+                    <Link to="/about" className="header__nav-link">About</Link>
+                </nav>
+            </div>
         </header>
     );
 }
