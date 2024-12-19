@@ -1,0 +1,45 @@
+.details {
+    @include respond-to(medium) {
+        @include flex(row, space-between, flex-start);
+    }
+    @include flex(column, center, center);
+    margin-top: 2em;
+    margin-bottom: 1em;
+
+    &__location {
+        @include respond-to(medium) {
+            max-width: 70%;
+        }
+        h1 {
+            margin-bottom: 0.2em;
+        }
+        p {
+            @include respond-to(medium) {
+                font-size: 1.125em;
+                font-weight: 500;
+            }
+        }
+    }
+
+    &__host {
+        @include flex(column, center, center);
+        @include respond-to(medium) {
+            @include flex(row-reverse, center, center);
+        }
+        p {
+            @include respond-to(medium) {
+                max-width: 60px;
+                margin-right: 0.5em;
+            }
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            @include respond-to(medium) {
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+}

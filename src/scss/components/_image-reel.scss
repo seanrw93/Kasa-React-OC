@@ -1,0 +1,26 @@
+.image-reel {
+    position: relative;
+    height: 27em;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+
+    .arrow-button {
+        position: absolute;
+
+        &--previous {
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+        }
+
+        &--next {
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+        }
+    }
+  }
+  

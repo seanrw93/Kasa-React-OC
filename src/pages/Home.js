@@ -11,14 +11,21 @@ const Home = () => {
     }, []);
 
     const [cards, setCards] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("/api/accommodations")
-            .then((response) => response.json())
-            .then((data) => {
-                setCards(data.accommodations || []); 
-            })
-            .catch((error) => console.error("Error fetching data:", error)); 
+        const fetchCards = async () => {
+            try {
+                const response = await fetch("/api/accommodations");
+                const data = await response.json();
+                setCards(data.accommodations || []);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchCards();
     }, []);
 
     const cardComponents = cards.map((card) => (
@@ -29,8 +36,6 @@ const Home = () => {
             imageUrl={card.cover}
         />
     ));
-
-    const loading = cards.length === 0;
 
     return (
         <>
