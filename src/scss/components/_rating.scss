@@ -1,0 +1,22 @@
+.ratings {
+    display: flex;
+    gap: 0.1em;
+    @include respond-to(medium) {
+        gap: 0.4em;
+    }
+    .star {
+        font-size: 18px;
+        @include respond-to(medium) {
+            font-size: 30px;
+        }
+        border: 0;
+
+        &--filled {
+            color: $primary-color
+        }
+
+        &--empty {
+            color: #E3E3E3;
+        }
+    }
+}

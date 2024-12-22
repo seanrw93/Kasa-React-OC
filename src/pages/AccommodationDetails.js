@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ImageReel from '../components/ImageReel';
 import Tag from '../components/Tag';
-// import Ratings from '../components/Ratings';
-// import Accordion from '../components/Accordion';
+import Ratings from '../components/Ratings';
+import Accordion from '../components/Accordion';
 
 const AccommodationDetails = () => {
     const params = useParams();
@@ -32,6 +32,8 @@ const AccommodationDetails = () => {
 
     const tags = accomm && accomm.tags.map((tag, index) => <Tag key={index} tagContent={tag} />); 
 
+    const accordionLiElems= accomm && accomm.amenities.map((listItem, index) => <li key={index}>{listItem}</li>);
+    const accordionContent = <ul>{accordionLiElems}</ul>;
 
     return (
         <>
@@ -50,13 +52,28 @@ const AccommodationDetails = () => {
                             <h1>{accomm.title}</h1>
                             <p>{accomm.location}</p>
                         </div>
-                        <div className="details__host">
+                        <div className="details__tags">
+                            {tags}
+                        </div>
+                        <div className="details__ratings">
+                            <Ratings rating={accomm.rating} />
+                        </div>
+                        <div className="details__host align-self-start ">
                             <img src={accomm.host.picture} alt={accomm.host.name} />
                             <p>{accomm.host.name}</p>
                         </div>
                     </div>
-                    <div className="d-flex">
-                        {tags}
+                    <div className="accordions-container">
+                        <Accordion 
+                            title="Description" 
+                            className="accordion__description"
+                            content={accomm.description} 
+                        />
+                        <Accordion 
+                            title="Amenities" 
+                            className="accordion__amenities"
+                            content={accordionContent} 
+                        />
                     </div>
                 </>
                 ) : <p>Loading...</p>

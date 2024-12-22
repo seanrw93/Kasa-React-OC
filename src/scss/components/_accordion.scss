@@ -1,4 +1,17 @@
+.accordions-container {
+    @include flex(column, center, flex-start);
+    @include respond-to(medium) {
+        @include flex(row, space-between, flex-start);
+    }
+    gap: 10px;
+    margin-bottom: 2em;
+    .accordion {
+        flex: 1;
+    }
+}
+
 .accordion {
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 15px 0;

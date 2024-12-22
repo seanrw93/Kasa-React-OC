@@ -1,18 +1,33 @@
 .details {
-    @include respond-to(medium) {
-        @include flex(row, space-between, flex-start);
-    }
-    @include flex(column, center, center);
+    @include grid-layout(2, 2, 2);
+    grid-template-areas:
+        "location location"
+        "tags tags"
+        "rating host";
+    align-items: center;
+    gap: 1em;
     margin-top: 2em;
     margin-bottom: 1em;
 
+    @include respond-to(medium) {
+        grid-template-areas:
+            "location host"
+            "tags rating";
+        margin-bottom: 0em;
+    }
+
     &__location {
-        @include respond-to(medium) {
-            max-width: 70%;
-        }
+        grid-area: location;
+        width: fit-content;
+
         h1 {
+            font-size: 18px;
+            @include respond-to(medium) {
+                font-size: 24px;
+            }
             margin-bottom: 0.2em;
         }
+
         p {
             @include respond-to(medium) {
                 font-size: 1.125em;
@@ -22,20 +37,62 @@
     }
 
     &__host {
-        @include flex(column, center, center);
-        @include respond-to(medium) {
-            @include flex(row-reverse, center, center);
-        }
+        grid-area: host;
+        @include flex(row-reverse, flex-start, center);
+
         p {
+            font-size: 12px;
+            max-width: 90px;
+            margin-right: 0.3em;
             @include respond-to(medium) {
-                max-width: 60px;
-                margin-right: 0.5em;
+                font-size: 1.25em;
+                margin-right: 0.1em;
             }
         }
+
         img {
-            width: 100px;
-            height: 100px;
+            width: 32px;
+            height: 32px;
+            @include respond-to(medium) {
+                width: 64px;
+                height: 64px;
+            }
             border-radius: 50%;
+        }
+    }
+
+    &__tags {
+        grid-area: tags;
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        gap: 0.2em;
+        margin-bottom: 0;
+        p {
+            font-size: 12px;
+            margin-right: 0.2em;
+            @include respond-to(medium) {
+                font-size: 1.25em;
+            }
+        }
+    }
+
+    &__ratings {
+        grid-area: rating;
+        @include flex(row, flex-start, center);
+        @include respond-to(medium) {
+            justify-content: flex-end;
+        }
+        p {
+            font-size: 12px;
+            margin-right: 0.2em;
+            @include respond-to(medium) {
+                font-size: 1.25em;
+            }
+        }
+
+        img {
+            width: 32px;
+            height: 32px;
             @include respond-to(medium) {
                 width: 64px;
                 height: 64px;

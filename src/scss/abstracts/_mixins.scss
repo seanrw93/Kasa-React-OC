@@ -28,15 +28,27 @@ $breakpoints: (
   
 @mixin grid-layout($columns-default, $columns-tablet, $columns-desktop) {
     display: grid;
-    grid-template-columns: repeat($columns-default, 1fr);
+    grid-template-columns: repeat($columns-default, auto);
     gap: 1rem;
 
     @include respond-to(medium) {
-        grid-template-columns: repeat($columns-tablet, 1fr);
+        grid-template-columns: repeat($columns-tablet, auto);
     }
 
     @include respond-to(large) {
-        grid-template-columns: repeat($columns-desktop, 1fr);
+        grid-template-columns: repeat($columns-desktop, auto);
     }
+}
+
+@mixin fadeIn($from, $to, $duration, $timing) {
+  @keyframes fadeIn {
+      from {
+          opacity: $from;
+      }
+      to {
+          opacity: $to;
+      }
+  }
+  animation: fadeIn $duration $timing forwards;
 }
 

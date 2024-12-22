@@ -1,11 +1,16 @@
 .image-reel {
     position: relative;
-    height: 27em;
+    height: 15em;
+    @include respond-to(medium) {
+        height: 27em;
+    }
     background-size: cover;
     background-position: center;
     text-align: center;
     border-radius: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;;
+
+    @include fadeIn(0, 1, 0.6s, ease);
 
     .arrow-button {
         position: absolute;

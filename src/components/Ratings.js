@@ -1,5 +1,4 @@
 import React from 'react';
-import './Ratings.css';
 
 const Ratings = ({ rating }) => {
     const totalStars = 5;
@@ -9,10 +8,10 @@ const Ratings = ({ rating }) => {
     return (
         <div className="ratings">
             {Array(filledStars).fill().map((_, i) => (
-                <span key={i} className="star filled">★</span>
+                <span key={i} className="star star--filled">★</span>
             ))}
             {Array(emptyStars).fill().map((_, i) => (
-                <span key={i} className="star empty">☆</span>
+                <span key={i} className="star star--empty">★</span>
             ))}
         </div>
     );

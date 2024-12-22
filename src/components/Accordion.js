@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Accordion = ({ title, content }) => {
+const Accordion = ({ className, title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -8,7 +8,7 @@ const Accordion = ({ title, content }) => {
   };
 
   return (
-    <div className="accordion">
+    <div className={`accordion ${className}`}>
       <div 
         className={`accordion-title ${isOpen ? 'open' : ''}`} 
         onClick={toggleAccordion}

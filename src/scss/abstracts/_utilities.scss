@@ -15,5 +15,19 @@
     &--align-stretch { align-items: stretch; }
     &--wrap { flex-wrap: wrap; }
 }
+// Grid utility classes
+.justify-center { justify-items: center; }
+.justify-start { justify-items: start; }
+.justify-end { justify-items: end; }
+.justify-stretch { justify-items: stretch; }
+.align-items-center { align-items: center; }
+.align-items-start { align-items: start; }
+.align-items-end { align-items: end; }
+.align-items-stretch { align-items: stretch; }
+.align-self-center { align-self: center; }
+.align-self-start { align-self: start; }
+.align-self-end { align-self: end; }
+.align-self-stretch { align-self: stretch; }
+
 
 
