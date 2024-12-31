@@ -42,7 +42,7 @@
 
         p {
             font-size: 12px;
-            max-width: 90px;
+            max-width: 100px;
             margin-right: 0.3em;
             @include respond-to(medium) {
                 font-size: 1.25em;

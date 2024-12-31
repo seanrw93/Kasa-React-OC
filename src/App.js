@@ -7,6 +7,7 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import AccommodationDetails from './pages/AccommodationDetails';
+import ErrorPage from './pages/ErrorPage';
 
 const App = () => {
   return (
@@ -16,6 +17,11 @@ const App = () => {
             <Route path="/" element={<Home />} /> 
             <Route path="/about" element={<About />} /> 
             <Route path="/accommodation/:id" element={<AccommodationDetails />} /> 
+            <Route path="*" element={<ErrorPage 
+                                        errorCode={404} 
+                                        errorMessage="Oops! It looks like this page doesn’t exist."
+                                      />} 
+            />
           </Route>
         </Routes>
     </BrowserRouter>

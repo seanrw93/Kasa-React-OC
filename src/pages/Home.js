@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Banner from "../components/Banner"
 import AccommodationCard from '../components/AccommodationCard';
 import Spinner from '../components/Spinner';
-import bannerImage from "../assets/images/banner-trees.png"
+import bannerImage from "../media/banner-trees.png"
 
 const Home = () => {
 
-    useEffect(() => {
-        document.title = 'Kasa - Home Page';
-    }, []);
-
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        document.title = 'Kasa - Home Page';
+    }, [cards || loading]);
 
     useEffect(() => {
         const fetchCards = async () => {

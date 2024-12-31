@@ -1,0 +1,36 @@
+.wrapper {
+    &:has(> .error-container) {
+        @include flex(column, center, center);
+    }
+
+    .error-container {
+        @include flex(column, center, center);
+    
+        .error__status {
+            font-size: 10rem;
+            font-weight: 700;
+            color: $primary-color;
+        }
+    
+        .error__message {
+            font-size: 2rem;
+            font-weight: 300;
+            color: $primary-color;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .error__link {
+            color: $primary-color;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 5rem;
+            text-decoration: underline;
+            transition: font-weight 0.3s ease-in-out;
+
+            &:hover {
+                font-weight: 700;
+            }
+        }
+    }
+}

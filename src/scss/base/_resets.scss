@@ -7,6 +7,10 @@
   * {
     margin: 0;
   }
+
+  html, body {
+    height: 100%;
+  }
   
   body {
     /* 3. Add accessible line-height */
@@ -21,6 +25,7 @@
     margin: 0 auto;      /* Center content horizontally */
     padding-left: 20px;  /* Left margin inside */
     padding-right: 20px; /* Right margin inside */
+    min-height: calc(100vh - 100px);   /* Full height of the viewport */
   }
   
   /* 5. Improve media defaults */
@@ -40,9 +45,6 @@
   }
   
   /* 8. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }

@@ -18,6 +18,13 @@
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(92, 50, 50, 0.1);
 
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+
     &-title {
         background: $primary-color;
         padding: 10px 15px;

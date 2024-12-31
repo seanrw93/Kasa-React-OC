@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Banner from "../components/Banner"
 import Accordion from "../components/Accordion";
-import bannerImage from "../assets/images/banner-mountains.png"
+import bannerImage from "../media/banner-mountains.png"
 
 const About = () => {
     useEffect(() => {
